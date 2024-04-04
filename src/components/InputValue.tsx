@@ -7,7 +7,7 @@ function InputValue() {
     const { calc } = useContext(CalcContext);
     return (
         <StyledInputValue>
-            <TextField className='screen'
+            <TextField
                 value={calc.num ? calc.num : calc.res}
                 size="small"
                 variant="standard"
