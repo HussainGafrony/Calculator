@@ -15,3 +15,7 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### APP
+
+![img](https://github.com/HussainGafrony/Calculator/assets/76180804/1c11b6ac-6363-4c59-9039-250c689aef00)
