@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import ButtonBox from './components/ButtonBox';
+import HandleOperation from './components/HandleOperation';
+import InputValue from './components/InputValue';
+import Wrapper from './components/Wrapper';
+import CalcProvider from './context/CalcContext';
+
+const btnValues: (string | number)[][] = [
+  ["C", "+-", "%", "/"],
+  [7, 8, 9, "x"],
+  [4, 5, 6, "-"],
+  [1, 2, 3, "+"],
+  [0, ".", "="],
+
+]
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CalcProvider>
+      <Wrapper>
+        <InputValue />
+        <ButtonBox>
+          {btnValues.flat().map((btn, i): any => (
+            <HandleOperation HandleOperation value={btn} optclass={btn} key={i} >
+            </HandleOperation>
+
+          ))}
+        </ButtonBox>
+      </Wrapper>
+    </CalcProvider >
   );
 }
 
